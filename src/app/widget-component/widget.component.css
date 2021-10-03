@@ -1,0 +1,206 @@
+  .calendar-component{
+    display: inline-block;
+    width: 60px;
+    height: auto;
+  }
+  .center{
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .inline{
+    display: inline-block;
+  }
+
+  .weekday{
+    width: 20px;
+    height: auto;
+  }
+
+  .weekday-weekend{
+    color: #A1A1A1;
+  }
+
+  .monthday{
+    width: 20px;
+    height: auto;
+  }
+
+  .monthday-weekend{
+    color: #A1A1A1;
+  }
+  
+  .monthday-today{
+    border: 1px solid orange;
+    border-radius: 4px;
+  }
+
+  .workingHours{
+    width: 20px;
+    height: auto;
+  }
+
+  .dot{
+    width: 20px;
+    height: 20px;
+    font-size: 500%;
+  }
+
+  .approved{
+    color: green;
+  }
+
+  .rejected{
+    color: red;
+  }
+
+  .other{
+    color: #A1A1A1;
+  }
+
+  .hide{
+    width: 20px;
+    height: 20px;
+    font-size: 500%;
+    opacity: 0;
+  }
+
+  .orange{
+    border: 1px solid #F08900;
+    border-radius: 4px;
+    background: #F08900;
+  }
+
+  .current-date{
+    display: inline-block;
+    text-align: left;
+    width: 70%;
+    vertical-align: middle;
+  }
+
+  .calendar-icon{
+    display: inline-block;
+    text-align: right;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .add-task{
+    background: #F08900;
+    color: white;
+    width: 100%;
+    height: 40px;
+    border-radius: 7px;
+  }
+
+  .hours{
+    display: inline-block;
+    text-align: left;
+    width: 90%;
+    vertical-align: middle;
+  }
+
+  .inline{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .left{
+    text-align: left;
+    display: inline-block;
+    width: 40%;
+    vertical-align: middle;
+  }
+
+  .right{
+    text-align: right;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .center-text{
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    vertical-align: middle;
+  }
+
+  .heading1{
+    font-size: 16px;
+    font-family: 'Roboto';
+  }
+
+  .heading2{
+    font-size: 14px;
+    font-family: 'Roboto';
+  }
+
+  .heading3{
+    font-size: 12px;
+    font-family: 'Roboto';
+  }
+
+  .heading-color{
+    background-color: #F3F3F4;
+  }
+
+  .border{
+    border: 4px solid #F3F3F4;
+    border-radius: 7px;
+    height: auto;
+  }
+
+  .widget-size{
+    height: 400px;
+    width: 450px;
+  }
+
+  .calendar-size{
+    height: 35%;
+  }
+
+  .events-wrapper{
+    height: 55%;
+    overflow-y: auto;
+  }
+
+  .button-size{
+    height: 10%;
+  }
+
+  .margin{
+    margin: 5px;
+  }
+
+  .timesheet-button{
+    display: inline-block;
+    text-align: right;
+    vertical-align: middle;
+    color: #F08900;
+    border-radius: 4px;
+    background-color: white;
+  }
+
+  .current-timesheet-date{
+    display: inline-block;
+    text-align: left;
+    width: 60%;
+    vertical-align: middle;
+  }
+
+  .inner-border{
+    border: 4px solid #F3F3F4;
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+
+  .margin-top{
+    margin-top: 10px;
+  }
+
+  .calendar-element-position{
+    display: flex; 
+    justify-content: center;
+  }

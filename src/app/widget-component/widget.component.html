@@ -1,0 +1,104 @@
+<div class="center border widget-size">
+  <div class="calendar-size">
+    <div>
+      <div class="current-date">
+        <p class="margin">{{selectedDate | date: 'MMMM y'}}</p>
+      </div>
+      <div class="calendar-icon">
+        <mat-icon aria-hidden="false" aria-label="Calendar today icon" (click)="changeSelectedDay(this.todayDate)" class="margin">calendar_today</mat-icon>
+      </div>
+    </div>
+
+    <div *ngFor="let calenderInfo of this.calenderInfoList" class="calendar-component">
+      <div (click)="changeSelectedDay(calenderInfo.date)">
+        <div [ngClass]="calenderInfo.weekdayCssClass">
+          {{ calenderInfo.date | date: 'EEE' }}
+        </div>
+        <div [ngClass]="calenderInfo.monthDayCssClass">
+          {{ calenderInfo.date | date: 'd'}}
+        </div>
+        <div class="workingHours margin calendar-element-position">
+          {{ calenderInfo.totalWorkingHours }}
+        </div>
+        <div [ngClass]="calenderInfo.eventStatusCssClass">
+          ·
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="events-wrapper inner-border">
+
+      <p class="current-timesheet-date margin">{{selectedDate | date: 'EEEE  d.MM.y'}}</p>
+      <button type="button" class="timesheet-button margin">GO TO TIMESHEET</button>
+
+
+
+      <div class="hours margin-top">
+        <div *ngIf="containsHourTypeEvents">
+          <div class="heading-color">
+            <mat-icon aria-hidden="false" aria-label="Alarm icon">alarm</mat-icon>
+            <p class="inline heading1">Hours</p>
+          </div>
+          <div>
+            <p class="current-date heading2">Type</p>
+            <p class="calendar-icon heading2">Duration</p>
+          </div>
+          <div *ngFor="let eventInfo of this.selectedDayEvents">
+              <div *ngIf="eventInfo.eventType == hour;">
+                <p class="current-date heading3">{{eventInfo.eventTypeName}}</p>
+                <p class="calendar-icon heading3">{{milisecToHours(eventInfo.lastTaskEnd.getTime()- eventInfo.firstTaskStart.getTime())}}</p>
+              </div>
+          </div>
+        </div>
+
+        <div *ngIf="containsExpenseTypeEvents margin-top">
+          <div class="heading-color">
+            <mat-icon aria-hidden="false" aria-label="Attach money icon">attach_money</mat-icon>
+            <p class="inline heading1">Expenses</p>
+          </div>
+          <div>
+            <p class="left heading2">Type</p>
+            <p class="center-text heading2">Quantity</p>
+            <p class="right heading2">Total</p>
+          </div>
+          <div *ngFor="let eventInfo of this.selectedDayEvents">
+              <div *ngIf="eventInfo.eventType == expense;">
+                <p class="left heading3">{{eventInfo.eventTypeName}}</p>
+                <p class="center-text heading3">{{eventInfo.quantity}}</p>
+                <p class="right heading3">{{eventInfo.price * eventInfo.quantity}}</p> 
+              </div>
+          </div>
+        </div>
+
+        <div *ngIf="containsAditionalHourTypeEvents margin-top">
+          <div class="heading-color">
+            <mat-icon aria-hidden="false" aria-label="Alarm on icon">alarm_on</mat-icon>
+            <p class="inline heading1">Additional hours</p>
+          </div>
+          <div>
+            <p class="current-date heading2">Type</p>
+            <p class="calendar-icon heading2">Amount</p>
+          </div>
+          <div *ngFor="let eventInfo of this.selectedDayEvents">
+              <div *ngIf="eventInfo.eventType == additionalHour;">
+                <p class="current-date heading3">{{eventInfo.eventTypeName}}</p>
+                <p class="calendar-icon heading3">{{eventInfo.price}}</p>
+              </div>
+          </div>
+        </div>
+
+
+        
+      </div>
+  </div>
+
+
+
+
+  <div class="button-size">
+    <button type="button" class="add-task">ADD TASK</button>
+  </div>
+</div>
+
